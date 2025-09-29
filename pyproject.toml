@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "call-analyst"
+version = "0.1.0"
+description = "Tooling for analyzing calls with transcription, anonymization, and embeddings workflows."
+readme = "README.md"
+authors = [
+  {name = "Call Analyst Team"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+  "pandas>=2.0",
+  "numpy>=1.23",
+  "faster-whisper>=0.10",
+  "presidio-analyzer>=2.2",
+  "presidio-anonymizer>=2.2",
+  "sentence-transformers>=2.2"
+]
+
+[project.optional-dependencies]
+diarization = [
+  "pyannote.audio>=3.0"
+]
+embeddings = [
+  "faiss-cpu>=1.7",
+  "scikit-learn>=1.2"
+]
